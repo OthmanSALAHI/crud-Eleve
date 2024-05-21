@@ -33,28 +33,34 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <h1>Activite Information</h1>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Date de Début</th>
-                    <th>Nombre de Jours</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($eleve->activites as $activity)
-                <tr>
-                    <td>{{ $activity->description }}</td>
-                    <td>{{ $activity->date_debut }}</td>
-                    <td>{{ $activity->nombreJours }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="container">
+            <h1>Activite Information</h1>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Date de Début</th>
+                            <th>Nombre de Jours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($eleve->activites as $activity)
+                        <tr>
+                            <td>{{ $activity->description }}</td>
+                            <td>{{ $activity->date_debut }}</td>
+                            <td>{{ $activity->nombreJours }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-info">
+                <p><strong>Nombre total des jours:</strong> 
+                    {{ $eleve->activites->sum('nombreJours') }}
+                </p>
+            </div>
+        </div>
     </div>
-</div>
 @endsection
  
