@@ -1,5 +1,5 @@
 @extends('eleve.layout')
-@section('title','index')
+@section('title', 'index')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -23,8 +23,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="grade">club:</label>
-                        <input type="text" class="form-control" id="grade" value="{{ $club->nom }}" readonly>
+                        <label for="club">club:</label>
+                        <input type="text" class="form-control" id="club" value="{{ $club->nom }}" readonly>
                     </div>
 
                     <a href="{{ route('eleves.index') }}" class="btn btn-primary">Back</a>
@@ -45,17 +45,16 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($eleve->activites as $activity)
                 <tr>
-                    @foreach($activite as $activity)
-                        <tr>
-                            <td>{{ $activity->description }}</td>
-                            <td>{{ $activity->date_debut }}</td>
-                            <td>{{ $activity->nombreJours }}</td>
-                        </tr>
-                    @endforeach
+                    <td>{{ $activity->description }}</td>
+                    <td>{{ $activity->date_debut }}</td>
+                    <td>{{ $activity->nombreJours }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
 @endsection
+ 
