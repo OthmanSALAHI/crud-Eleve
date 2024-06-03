@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use EleveActiviteSeeder;
+use Database\Seeders\EleveActiviteSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

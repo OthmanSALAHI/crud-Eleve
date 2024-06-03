@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Eleve extends Model
 {
     use HasFactory;
+    public $fillable = ['nom', 'prenom', 'club_id'];
     public function club()
     {
         return $this->belongsTo(Club::class);

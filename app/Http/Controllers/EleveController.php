@@ -33,12 +33,12 @@ class EleveController extends Controller
      */
     public function store(Request $request)
     {
-        $eleve = new Eleve();
-        $eleve->nom = $request->input('nom');
-        $eleve->prenom = $request->input('prenom');
-        $eleve->club_id = $request->input('club');
-        $eleve->save();
-        return redirect()->route('eleves.index');
+        $eleve=Eleve::create([
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'club_id'=>$request->club,
+            ]) ;
+            return redirect()->route('eleves.index') ;
     }
 
     /**
